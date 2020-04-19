@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat Alternates', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body {
+    background-color: #222;
+}
+
+small {
+    font-size: 1rem;
+}
+
+.budget-container{
+    margin: 0 auto;
+    width: 700px;
+    height: 100vh;
+    background-color: #34006a;
+}
+
+.budget-header {
+    color: white;
+}
+
+.app-title{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px 0;
+}
+
+.balance{
+    width: 20%;
+    font-size: 1.5rem;
+}
+
+.account{
+    display: flex;
+    justify-content: space-around;
+    height: 30px;
+    margin: 35px auto;
+    text-align: center;
+}
+
+.income, .chart, .outcome{
+    width: 33%;
+}
+.income .title, .outcome .title {
+    opacity: 0.5;
+}
+.income-total, .outcome-total{
+    padding-top: 10px;
+    font-size: 1.3rem;
+}
+.outcome-total{
+    color: #f0624d;
+}
+
+/*/////////////   DASHBOARD    /////////////*/
+.budget-dashboard{
+    min-height: 85vh;
+    background-color: #FFF;
+    margin-top: 35px;
+    border-radius: 30px 30px 0 0;
+}
+
+.budget-dashboard .dash-title{
+    display: inline-block;
+    color: #1a0034;
+    font-size: 1.7em;
+    margin: 10px 20px 0;
+}
+
+.toggle{
+    margin: 10px 20px;
+}
+
+.toggle .tab1, .tab2, .tab3{
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #1a0034;
+    opacity: 0.4;
+}
+
+.toggle .tab2, .tab3{
+    margin-left: 10px;
+}
+
+.focus{
+    opacity : 1 !important;
+}
+
+.hide{
+    display: none;
+}
+
+div.input {
+    width: 100%;
+}
+
+/* ////////// ALL ///////////// */
+.budget-dashboard #all{
+    height: 75vh;
+    position: relative;
+}
+.budget-dashboard #all ul{
+    height: 285px;
+    margin: 0;
+    padding: 0;
+    margin-top:20px;
+    overflow-x: auto;
+}
+
+.budget-dashboard #all ul.list li{
+    position: relative;
+    font-size: 1em;
+}
+
+.budget-dashboard #all ul.list li *{
+    display: inline-block;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.budget-dashboard #all ul.list li .entry{
+    height: auto;
+    padding-left: 20px;
+    margin-bottom: 10px;;
+    word-wrap: break-word;
+}
+
+.budget-dashboard #all ul.list li #edit{
+    visibility: hidden;
+}
+
+.budget-dashboard #all ul.list li #delete{
+    position: absolute;
+    width:20px;
+    height: 20px;
+    right: 20px;
+    cursor: pointer;
+    background-image: url('img/trash.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+
+.budget-dashboard #all ul.list li.income{
+
+}
+.budget-dashboard #all ul.list li.expense{
+    color: #f0624d;
+}
+
+/* ------------------- Expense --------------- */
+.budget-dashboard #expense{
+    height: 339px;
+    position: relative;
+}
+
+.budget-dashboard #expense .input{
+    position: absolute;
+    display: block;
+    bottom: 0;
+    border-top: 1px solid #ccc;
+}
+
+.budget-dashboard #expense .input *{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.budget-dashboard #expense .input input#expense-title-input{
+    height: 40px;
+    width : 40%;
+    padding-left: 10px;
+    font-size: 1.2em;
+    font-family: 'Gilroy';
+    margin: 5px;
+    margin-left: 10px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+}
+
+.budget-dashboard #expense .input input#expense-amount-input{
+    height: 40px;
+    width : 40%;
+    padding-left: 10px;
+    font-size: 1.2em;
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin: 5px;
+    margin-left: -10px;
+    border-radius: 0 10px 10px 0;
+    border: none;
+}
+
+.budget-dashboard #expense .input .add-expense img{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.budget-dashboard #expense ul{
+    height: 285px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top:20px;
+    overflow-x: auto;
+}
+
+.budget-dashboard #expense ul.list li{
+    position: relative;
+    font-size: 1em;
+}
+
+.budget-dashboard #expense ul.list li *{
+    display: inline-block;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.budget-dashboard #expense ul.list li .entry{
+    height: auto;
+    padding-left: 20px;
+    margin-bottom: 10px;;
+    word-wrap: break-word;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #f0624d;
+}
+
+.budget-dashboard #expense ul.list li #edit{
+    position: absolute;
+    width:20px;
+    height: 20px;
+    right: 50px;
+    cursor: pointer;
+    background-image: url("img/edit.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+
+.budget-dashboard #expense ul.list li #delete{
+    position: absolute;
+    width:20px;
+    height: 20px;
+    right: 20px;
+    cursor: pointer;
+    background-image: url('img/trash.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+
+/* /////// INCOME //////// */
+.budget-dashboard #income{
+    height: 339px;
+    position: relative;
+}
+
+.budget-dashboard #income .input{
+    position: absolute;
+    display: block;
+    bottom: 0;
+    border-top: 1px solid #ccc;
+}
+
+.budget-dashboard #income .input *{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.budget-dashboard #income .input input#income-title-input{
+    height: 40px;
+    padding-left: 10px;
+    font-size: 1.2em;
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin: 5px;
+    margin-left: 10px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+}
+
+.budget-dashboard #income .input input#income-amount-input{
+    height: 40px;
+    padding-left: 10px;
+    font-size: 1.2em;
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin: 5px;
+    margin-left: -10px;
+    border-radius: 0 10px 10px 0;
+    border: none;
+}
+
+.budget-dashboard #income .input .add-income img{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.budget-dashboard #income ul{
+    height: 285px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top:20px;
+    overflow-x: auto;
+}
+
+.budget-dashboard #income ul.list li{
+    position: relative;
+    font-size: 1em;
+}
+
+.budget-dashboard #income ul.list li *{
+    display: inline-block;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.budget-dashboard #income ul.list li .entry{
+    height: auto;
+    padding-left: 20px;
+    margin-bottom: 10px;;
+    word-wrap: break-word;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.budget-dashboard #income ul.list li #edit{
+    position: absolute;
+    width:20px;
+    height: 20px;
+    right: 50px;
+    cursor: pointer;
+    background-image: url("img/edit.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+
+.budget-dashboard #income ul.list li #delete{
+    position: absolute;
+    width:20px;
+    height: 20px;
+    right: 20px;
+    cursor: pointer;
+    background-image: url('img/trash.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 720px) {
+    .budget-container {
+        width: 100%;
+    }
+    h1, .balance {
+        font-size: 20px;
+    }
+}
