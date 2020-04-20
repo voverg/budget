@@ -107,10 +107,38 @@ small {
 }
 
 ul {
-    height: 20px;
+    padding-top: 10px;
     overflow-y: auto;
 }
+li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+.entry {
+    flex-grow: 1;
+    align-self: center;
+    color: #333;
+    font-weight: bold;
+}
+.li__expense .entry {
+    color: #f0624d;
+}
+.edit {
+    background: url('../img/edit.png') no-repeat;
+}
+.delete {
+    background: url('../img/trash.png') no-repeat;
+    margin-left: 10px;
+}
+.edit, .delete {
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    cursor: pointer;
+}
 
+/*------------- inputns ------------*/
 div.input {
     display: flex;
     justify-content: space-between;
@@ -131,7 +159,7 @@ div.input input[name="amount"] {
 }
 div.input input::placeholder {
     font-size: 1rem;
-    color: green;
+    color: #39C55DFF;
 }
 .add-expense, .add-income {
     width: 40px;
@@ -140,6 +168,8 @@ div.input input::placeholder {
     background-size: contain;
     cursor: pointer;
 }
+
+
 
 .disabled {
     pointer-events: none;

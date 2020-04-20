@@ -27,7 +27,54 @@ const del = 'delete', edit = 'edit';
 
 // --------------- Functions ----------------------------
 function updateUI() {
+    income = calculateTotal('income', entryList);
+    outcome = calculateTotal('expense', entryList);
+    balance = calculateBalance(income, outcome);
 
+    balanceElem.innerHTML = `${balance}<small> RUR</small>`;
+    incomeTotalElem.innerHTML = `${income}<small> RUR</small>`;
+    outcomeTotalElem.innerHTML = `${outcome}<small> RUR</small>`;
+
+    clearElements( [expense_ul, income_ul, all_ul] );
+
+    entryList.forEach((entry, index) => {
+        if (entry.type === 'income') {
+            showEntry(income_ul, entry.type, entry.title, entry.amount, index);
+        } else if (entry.type === 'expense') {
+            showEntry(expense_ul, entry.type, entry.title, entry.amount, index);
+        }
+        showEntry(all_ul, entry.type, entry.title, entry.amount, index);
+    })
+}
+
+function showEntry(list, type, title, amount, id) {
+    const entry = `<li id="${id}" class="li__${type}">
+                        <div class="entry">${title}: ${amount} руб.</div>
+                        <div id="edit" class="edit"></div>
+                        <div id="delete" class="delete"></div>
+                    </li>`
+
+    list.insertAdjacentHTML('afterbegin', entry);
+}
+
+function clearElements( elements ) {
+    elements.forEach(elem => {
+        elem.innerHTML = '';
+    })
+}
+
+function calculateTotal(type, list) {
+    let sum = 0;
+    list.forEach(item => {
+        if (item.type === type) {
+            sum += item.amount;
+        }
+    })
+    return sum;
+}
+
+function calculateBalance(income, outcome) {
+    return income - outcome;
 }
 
 function clearInputs( inputs ) {
@@ -57,9 +104,6 @@ function inactive( arrayTabs ) {
     });
 }
 
-// Add tasks
-
-
 // ------------------------------ Event listeners
 incomeBtn.addEventListener('click', function() {
     show(incomeElem);
@@ -81,29 +125,31 @@ allBtn.addEventListener('click', function() {
 })
 // Add notes
 incomeAddBtn.addEventListener('click', function() {
-    if (!incomeTitleInput || !incomeAmountInput) return;
+    this.parentNode.firstElementChild.focus()
+    if (!incomeTitleInput.value.trim() || !incomeAmountInput.value.trim()) return;
 
     let income = {
         type: 'income',
         title: incomeTitleInput.value,
-        amount: incomeAmountInput.value
+        amount: parseInt(incomeAmountInput.value)
     }
     entryList.push(income);
 
     updateUI();
-    clearInputs( [incomeTitleInput, incomeAmountInput] )
+    clearInputs( [incomeTitleInput, incomeAmountInput] );
 })
 
 expenseAddBtn.addEventListener('click', function() {
-    if (!expenseTitleInput || !expenseAmountInput) return;
+    this.parentNode.firstElementChild.focus();
+    if (!expenseTitleInput.value.trim() || !expenseAmountInput.value.trim()) return;
 
     let expense = {
         type: 'expense',
         title: expenseTitleInput.value,
-        amount: expenseAmountInput.value
+        amount: parseInt(expenseAmountInput.value)
     }
     entryList.push(expense);
 
     updateUI();
-    clearInputs( [expenseTitleInput, expenseAmountInput] )
+    clearInputs( [expenseTitleInput, expenseAmountInput] );
 })
