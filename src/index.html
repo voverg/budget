@@ -45,32 +45,32 @@
         <div class="dashboard">
             <div class="dashboard__title">Список</div>
             <div class="dashboard__toggle">
-                <div class="expense-tab">Расходы</div>
+                <div class="expense-tab active">Расходы</div>
                 <div class="income-tab">Доходы</div>
-                <div class="all-tab active">Все операции</div>
+                <div class="all-tab">Все операции</div>
             </div>
 
-            <div id="dashboard__expense" class="dashboard__expense hide">
+            <div class="dashboard__expense">
                 <ul class="list"></ul>
                 <div class="input">
-                    <input type="text" id="expense-title-input" name="title" placeholder="Товар" autofocus>
-                    <input type="number" id="expense-amount-input" name="amount" placeholder="Сумма">
+                    <input type="text" class="expense-title-input" name="title" placeholder="На что расходы" autofocus>
+                    <input type="number" class="expense-amount-input" name="amount" placeholder="Сумма">
                     <div class="add-expense"></div>
                 </div>
             </div>
-            <div id="dashboard__income" class="dashboard__income hide">
+            <div class="dashboard__income hide">
                 <ul class="list"></ul>
                 <div class="input">
-                    <input type="text" id="income-title-input" name="title" placeholder="Товар" autofocus>
-                    <input type="number" id="income-amount-input" name="amount" placeholder="Сумма">
+                    <input type="text" class="income-title-input" name="title" placeholder="С чего доход" autofocus>
+                    <input type="number" class="income-amount-input" name="amount" placeholder="Сумма">
                     <div class="add-income"></div>
                 </div>
             </div>
-            <div id="dashboard__all" class="dashboard__all">
+            <div class="dashboard__all hide">
                 <ul class="list"></ul>
                 <div class="input disabled">
-                    <input type="text" id="all-title-input" name="title" placeholder="Товар">
-                    <input type="number" id="all-amount-input" name="amount" placeholder="Сумма">
+                    <input type="text" class="all-title-input" name="title">
+                    <input type="number" class="all-amount-input" name="amount">
                     <div class="add-income"></div>
                 </div>
             </div>

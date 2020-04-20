@@ -118,13 +118,16 @@ div.input {
     border-top: 1px solid #ccc;
 }
 div.input input {
-    width: 40%;
+    width: 50%;
     margin: 0 10px;
     padding-left: 10px;
     border: none;
     border-bottom: 1px solid #777;
     font-size: 1.2rem;
     outline: none;
+}
+div.input input[name="amount"] {
+    width: 20%;
 }
 div.input input::placeholder {
     font-size: 1rem;
@@ -140,7 +143,7 @@ div.input input::placeholder {
 
 .disabled {
     pointer-events: none;
-    opacity: 0.8;
+    opacity: 0;
 }
 
 .hide {
