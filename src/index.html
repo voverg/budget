@@ -49,7 +49,8 @@
                 <div class="income-tab">Доходы</div>
                 <div class="all-tab active">Все операции</div>
             </div>
-            <div id="dashboard__expense" class="dashboard__expense">
+
+            <div id="dashboard__expense" class="dashboard__expense hide">
                 <ul class="list"></ul>
                 <div class="input">
                     <input type="text" id="expense-title-input" name="title" placeholder="Товар" autofocus>
@@ -60,12 +61,19 @@
             <div id="dashboard__income" class="dashboard__income hide">
                 <ul class="list"></ul>
                 <div class="input">
-                    <input type="text" id="income-title-input" name="title" placeholder="Товар">
+                    <input type="text" id="income-title-input" name="title" placeholder="Товар" autofocus>
                     <input type="number" id="income-amount-input" name="amount" placeholder="Сумма">
                     <div class="add-income"></div>
                 </div>
             </div>
-            <div id="all" class="all hide"></div>
+            <div id="dashboard__all" class="dashboard__all">
+                <ul class="list"></ul>
+                <div class="input disabled">
+                    <input type="text" id="all-title-input" name="title" placeholder="Товар">
+                    <input type="number" id="all-amount-input" name="amount" placeholder="Сумма">
+                    <div class="add-income"></div>
+                </div>
+            </div>
         </div>
 
         <footer class="footer">

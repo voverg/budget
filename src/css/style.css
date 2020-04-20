@@ -92,6 +92,7 @@ small {
     font-size: 1.1em;
     color: #1a0034;
     opacity: 0.4;
+    cursor: pointer;
 }
 .income-tab, .all-tab {
     margin-left: 10px;
@@ -135,6 +136,11 @@ div.input input::placeholder {
     background: url('../img/plus.png') no-repeat;
     background-size: contain;
     cursor: pointer;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.8;
 }
 
 .hide {
