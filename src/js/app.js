@@ -110,12 +110,14 @@ incomeBtn.addEventListener('click', function() {
     hide( [expenseElem, allElem] );
     active(incomeBtn);
     inactive( [expenseBtn, allBtn] );
+    incomeTitleInput.focus();
 })
 expenseBtn.addEventListener('click', function() {
     show(expenseElem);
     hide( [incomeElem, allElem] );
     active(expenseBtn);
     inactive( [incomeBtn, allBtn] );
+    expenseTitleInput.focus();
 })
 allBtn.addEventListener('click', function() {
     show(allElem);
