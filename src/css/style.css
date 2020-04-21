@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 16px;
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
@@ -11,7 +12,7 @@ body {
 }
 
 small {
-    font-size: 1rem;
+    font-size: 0.6rem;
 }
 
 .container {
@@ -32,20 +33,34 @@ small {
 .app-title {
     display: flex;
     justify-content: space-between;
-    padding: 20px 30px 0;
+    padding: 20px 0;
+}
+h1 {
+    flex-basis: 60%;
+    font-size: 1.7rem;
+    text-align: center;
 }
 .balance {
-    flex-basis: 30%;
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.balance__value {
+    padding-top: 10px;
     font-size: 1.5rem;
 }
 .account {
     display: flex;
-    justify-content: space-around;
-    margin: 25px auto 0;
-    padding-left: 30px;
+    justify-content: space-between;
+    margin: 10px auto 0;
     text-align: left;
 }
 .income, .chart, .outcome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 33%;
 }
 .income__title, .outcome__title {
@@ -54,6 +69,9 @@ small {
 .income__total, .outcome__total{
     padding-top: 10px;
     font-size: 1.3rem;
+}
+.income__total {
+    color: #39C55DFF;
 }
 .outcome__total{
     color: #f0624d;
@@ -124,6 +142,7 @@ li {
 }
 .li__expense .entry {
     color: #f0624d;
+    font-weight: normal;
 }
 .edit {
     background: url('../img/edit.png') no-repeat;
@@ -206,6 +225,27 @@ div.input input::placeholder {
         width: 100%;
     }
     h1, .balance {
-        font-size: 20px;
+        font-size: 1.2rem;
+    }
+/*    .balance {
+        flex-basis: 35%;
+    }*/
+    .chart {
+    width: 20%;
+    }
+    .income, .outcome{
+        width: 40%;
+    }
+    div.input input {
+        padding-left: 5px;
+    }
+}
+
+@media (max-width: 350px) {
+    * {
+        font-size: 12px;
+    }
+    div.input input {
+        padding: 0;
     }
 }
