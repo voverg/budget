@@ -18,7 +18,7 @@ function drawCircle(color, ratio, anticlockwise) {
     ctx.stroke();
 }
 
-function updateChart(income, outcome) {
+export default function updateChart(income, outcome) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     let ratio = income / (income + outcome);

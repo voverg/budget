@@ -1,3 +1,4 @@
+import updateChart from './chart.js';
 // Select html elements
 const balanceElem = document.querySelector('.balance__value');
 const incomeTotalElem = document.querySelector('.income__total');
@@ -66,8 +67,8 @@ function updateUI() {
 function showEntry(list, type, title, amount, id) {
     const entry = `<li id="${id}" class="li__${type}">
                         <div class="entry">${title}: ${amount} руб.</div>
-                        <div id="edit" class="edit"></div>
-                        <div id="delete" class="delete"></div>
+                        <div class="edit"></div>
+                        <div class="delete"></div>
                     </li>`
 
     list.insertAdjacentHTML('afterbegin', entry);
@@ -93,6 +94,38 @@ function calculateBalance(income, outcome) {
     return income - outcome;
 }
 
+// ------------- Add notes
+// Add a new income note
+function addIncomeNote(btn) {
+    btn.parentNode.firstElementChild.focus()
+    if (!incomeTitleInput.value.trim() || !incomeAmountInput.value.trim()) return;
+
+    let income = {
+        type: 'income',
+        title: incomeTitleInput.value,
+        amount: parseInt(incomeAmountInput.value)
+    }
+    entryList.push(income);
+
+    updateUI();
+    clearInputs( [incomeTitleInput, incomeAmountInput] );
+}
+
+function addExpenseNote(btn) {
+    btn.parentNode.firstElementChild.focus();
+    if (!expenseTitleInput.value.trim() || !expenseAmountInput.value.trim()) return;
+
+    let expense = {
+        type: 'expense',
+        title: expenseTitleInput.value,
+        amount: parseInt(expenseAmountInput.value)
+    }
+    entryList.push(expense);
+
+    updateUI();
+    clearInputs( [expenseTitleInput, expenseAmountInput] );
+}
+
 // Clear inputs after added notes
 function clearInputs( inputs ) {
     inputs.forEach(input => {
@@ -100,7 +133,43 @@ function clearInputs( inputs ) {
     })
 }
 
-// Show and hide tabs and dashboard screens categories
+
+// ------------- Delete or edit notes (li elements)
+function deleteOrEdit(event) {
+    const targetBtn = event.target;
+    const entry = targetBtn.parentNode;
+
+    if (targetBtn.classList.contains('delete')) {
+        const conf = confirm('Точно хочешь удалить эту запись?');
+        if (!conf) return;
+        deleteEntry(entry);
+    } else if (targetBtn.classList.contains('edit')) {
+        editEntry(entry);
+    }
+
+    updateUI();
+}
+
+function deleteEntry(entry) {
+    entryList.splice(parseInt(entry.id), 1);
+    entry.remove();
+}
+
+function editEntry(entryElem) {
+    let entry = entryList[entryElem.id];
+
+    if (entry.type === 'income') {
+        incomeTitleInput.value = entry.title;
+        incomeAmountInput.value = entry.amount;
+    } else if (entry.type === 'expense') {
+        expenseTitleInput.value = entry.title;
+        expenseAmountInput.value = entry.amount;
+    }
+
+    deleteEntry(entryElem);
+}
+
+// -------------Show and hide tabs and dashboard screens categories
 function show(elem) {
     elem.classList.remove('hide');
 }
@@ -122,6 +191,7 @@ function inactive( arrayTabs ) {
 }
 
 // ------------------------------ Event listeners
+// Show and hide tabs
 incomeBtn.addEventListener('click', function() {
     show(incomeElem);
     hide( [expenseElem, allElem] );
@@ -144,32 +214,24 @@ allBtn.addEventListener('click', function() {
 })
 
 // Add notes
-incomeAddBtn.addEventListener('click', function() {
-    this.parentNode.firstElementChild.focus()
-    if (!incomeTitleInput.value.trim() || !incomeAmountInput.value.trim()) return;
-
-    let income = {
-        type: 'income',
-        title: incomeTitleInput.value,
-        amount: parseInt(incomeAmountInput.value)
+incomeAddBtn.addEventListener('click', event => {
+    addIncomeNote(event.target);
+});
+incomeAmountInput.addEventListener('keyup', event => {
+    if (event.keyCode === 13) {
+        addIncomeNote(event.target);
     }
-    entryList.push(income);
-
-    updateUI();
-    clearInputs( [incomeTitleInput, incomeAmountInput] );
+})
+expenseAddBtn.addEventListener('click', event => {
+    addExpenseNote(event.target);
+});
+expenseAmountInput.addEventListener('keyup', event => {
+    if (event.keyCode === 13) {
+        addExpenseNote(event.target);
+    }
 })
 
-expenseAddBtn.addEventListener('click', function() {
-    this.parentNode.firstElementChild.focus();
-    if (!expenseTitleInput.value.trim() || !expenseAmountInput.value.trim()) return;
-
-    let expense = {
-        type: 'expense',
-        title: expenseTitleInput.value,
-        amount: parseInt(expenseAmountInput.value)
-    }
-    entryList.push(expense);
-
-    updateUI();
-    clearInputs( [expenseTitleInput, expenseAmountInput] );
-})
+// Edit or delete notes handlers
+income_ul.addEventListener('click', deleteOrEdit);
+expense_ul.addEventListener('click', deleteOrEdit);
+all_ul.addEventListener('click', deleteOrEdit);
