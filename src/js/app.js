@@ -25,6 +25,19 @@ let entryList = [];
 let balance = 0, income = 0, outcome = 0;
 const del = 'delete', edit = 'edit';
 
+// Set data to lacal storage
+function setDataToLocalStorage () {
+    localStorage.setItem('entryList', JSON.stringify(entryList));
+}
+// Get data from local storage
+let data = localStorage.getItem('entryList');
+if (data) {
+    entryList = JSON.parse(data);
+} else {
+    entryList = [];
+}
+updateUI();
+
 // --------------- Functions ----------------------------
 function updateUI() {
     income = calculateTotal('income', entryList);
@@ -45,6 +58,9 @@ function updateUI() {
         }
         showEntry(all_ul, entry.type, entry.title, entry.amount, index);
     })
+
+    updateChart(income, outcome);
+    setDataToLocalStorage();
 }
 
 function showEntry(list, type, title, amount, id) {
@@ -77,6 +93,7 @@ function calculateBalance(income, outcome) {
     return income - outcome;
 }
 
+// Clear inputs after added notes
 function clearInputs( inputs ) {
     inputs.forEach(input => {
         input.value = '';
@@ -125,6 +142,7 @@ allBtn.addEventListener('click', function() {
     active(allBtn);
     inactive( [expenseBtn, incomeBtn] );
 })
+
 // Add notes
 incomeAddBtn.addEventListener('click', function() {
     this.parentNode.firstElementChild.focus()
