@@ -147,6 +147,9 @@ li {
 .edit {
     background: url('../img/edit.png') no-repeat;
 }
+.dashboard__all li .edit {
+    display: none;
+}
 .delete {
     background: url('../img/trash.png') no-repeat;
     margin-left: 10px;
