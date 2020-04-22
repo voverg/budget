@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +7,8 @@
     font-size: 16px;
     list-style: none;
     text-decoration: none;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 body {
     background-color: #d4d4d4;
@@ -16,9 +19,16 @@ small {
 }
 
 .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin: 0 auto;
     width: 700px;
     height: 95vh;
@@ -31,20 +41,33 @@ small {
 }
 
 .app-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 20px 0;
 }
 h1 {
-    flex-basis: 60%;
+    -ms-flex-preferred-size: 60%;
+        flex-basis: 60%;
     font-size: 1.7rem;
     text-align: center;
 }
 .balance {
-    flex-basis: 40%;
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 1.5rem;
 }
 .balance__value {
@@ -52,15 +75,26 @@ h1 {
     font-size: 1.5rem;
 }
 .account {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin: 10px auto 0;
     text-align: left;
 }
 .income, .chart, .outcome{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 33%;
 }
 .income__title, .outcome__title {
@@ -79,18 +113,33 @@ h1 {
 
 /*---- Content ----------*/
 .content {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 /*---------- Dashboard ----------*/
 .dashboard {
     flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     background-color: #FFF;
     border-radius: 30px 30px 0 0;
+    /*height: 100%;*/
 }
 
 .dashboard__title {
@@ -118,10 +167,19 @@ h1 {
 
 .dashboard__expense, .dashboard__income, .dashboard__all {
     width: 100%;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 ul {
@@ -129,13 +187,21 @@ ul {
     overflow-y: auto;
 }
 li {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 5px 20px;
 }
 .entry {
-    flex-grow: 1;
-    align-self: center;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     padding-right: 10px;
     color: #333;
     font-weight: bold;
@@ -155,7 +221,8 @@ li {
     margin-left: 10px;
 }
 .edit, .delete {
-    flex-shrink: 0;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
     width: 25px;
     height: 25px;
     background-size: contain;
@@ -164,8 +231,12 @@ li {
 
 /*------------- inputns ------------*/
 div.input {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 5px 15px;
     border-top: 1px solid #ccc;
 }
@@ -180,6 +251,22 @@ div.input input {
 }
 div.input input[name="amount"] {
     width: 20%;
+}
+div.input input::-webkit-input-placeholder {
+    font-size: 1rem;
+    color: #39C55DFF;
+}
+div.input input::-moz-placeholder {
+    font-size: 1rem;
+    color: #39C55DFF;
+}
+div.input input:-ms-input-placeholder {
+    font-size: 1rem;
+    color: #39C55DFF;
+}
+div.input input::-ms-input-placeholder {
+    font-size: 1rem;
+    color: #39C55DFF;
 }
 div.input input::placeholder {
     font-size: 1rem;

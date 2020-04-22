@@ -86,11 +86,11 @@ h1 {
 }
 /*---------- Dashboard ----------*/
 .dashboard {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     background-color: #FFF;
     border-radius: 30px 30px 0 0;
-    height: 100%;
 }
 
 .dashboard__title {
