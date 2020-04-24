@@ -13,19 +13,19 @@ This ES6 standard project rebuild with webpack and babel to be cross browsers.
 
 This application allows you to keep records of personal finances. It's easy, just try it!
 
-![]()
+![](https://github.com/voverg/budget/blob/master/src/img/social_budget_large_screenshot.png)
 
 Start write a text note in your income or expense tab in the first input field and then write an amount (just digit) in the second field. Push the 'Plus' button (or **Enter** key on your keyboard)  to add a note to the note list.
 
-![]()
+![](https://github.com/voverg/budget/blob/master/src/img/budget_inputs_screenshot.png)
 
 if you want to delete or edit any note, you should push the **edit** or **delete** icon buttons.
 
-![]()
+![](https://github.com/voverg/budget/blob/master/src/img/budget_edit_delete_screenshot.png)
 
 Click the tab buttons to change categories of money operations.
 
-![]()
+![](https://github.com/voverg/budget/blob/master/src/img/budget_categories_screenshot.png)
 
 -----
 
