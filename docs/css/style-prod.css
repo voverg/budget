@@ -56,8 +56,8 @@ h1 {
     text-align: center;
 }
 .balance {
-    -ms-flex-preferred-size: 30%;
-        flex-basis: 30%;
+    -ms-flex-preferred-size: 35%;
+        flex-basis: 35%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -313,7 +313,7 @@ div.input input::placeholder {
         font-size: 1.2rem;
     }
     .balance {
-        flex-basis: 35%;
+        flex-basis: 40%;
     }
     .chart {
     width: 20%;
