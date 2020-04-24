@@ -44,12 +44,12 @@
         <div class="dashboard">
             <div class="dashboard__title">Денежные операции</div>
             <div class="dashboard__toggle">
-                <div class="expense-tab active">Расходы</div>
+                <div class="expense-tab">Расходы</div>
                 <div class="income-tab">Доходы</div>
-                <div class="all-tab">Все операции</div>
+                <div class="all-tab active">Все операции</div>
             </div>
 
-            <div class="dashboard__expense">
+            <div class="dashboard__expense hide">
                 <ul class="list"></ul>
                 <div class="input">
                     <input type="text" class="expense-title-input" name="title" placeholder="На что расходы" autofocus>
@@ -65,7 +65,7 @@
                     <div class="add-income"></div>
                 </div>
             </div>
-            <div class="dashboard__all hide">
+            <div class="dashboard__all">
                 <ul class="list"></ul>
                 <div class="input disabled">
                     <input type="text" class="all-title-input" name="title">
