@@ -56,8 +56,8 @@ h1 {
     text-align: center;
 }
 .balance {
-    -ms-flex-preferred-size: 40%;
-        flex-basis: 40%;
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -202,8 +202,7 @@ li {
         -ms-grid-row-align: center;
         align-self: center;
     padding-right: 10px;
-    color: #333;
-    font-weight: bold;
+    color: #10882f;
 }
 .li__expense .entry {
     color: #f0624d;
@@ -313,9 +312,9 @@ div.input input::placeholder {
     h1, .balance {
         font-size: 1.2rem;
     }
-/*    .balance {
+    .balance {
         flex-basis: 35%;
-    }*/
+    }
     .chart {
     width: 20%;
     }

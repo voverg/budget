@@ -65,8 +65,9 @@ function updateUI() {
 }
 
 function showEntry(list, type, title, amount, id) {
+    const operation = type == 'income' ? '+' : '-';
     const entry = `<li id="${id}" class="li__${type}">
-                        <div class="entry">${title}: ${amount} руб.</div>
+                        <div class="entry">${title}:&nbsp;&nbsp; ${operation}${amount} руб.</div>
                         <div class="edit"></div>
                         <div class="delete"></div>
                     </li>`

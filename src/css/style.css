@@ -41,7 +41,7 @@ h1 {
     text-align: center;
 }
 .balance {
-    flex-basis: 40%;
+    flex-basis: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -137,8 +137,8 @@ li {
     flex-grow: 1;
     align-self: center;
     padding-right: 10px;
-    color: #333;
-    font-weight: bold;
+    color: #10882f;
+/*    font-weight: bold;*/
 }
 .li__expense .entry {
     color: #f0624d;
@@ -227,9 +227,9 @@ div.input input::placeholder {
     h1, .balance {
         font-size: 1.2rem;
     }
-/*    .balance {
+    .balance {
         flex-basis: 35%;
-    }*/
+    }
     .chart {
     width: 20%;
     }

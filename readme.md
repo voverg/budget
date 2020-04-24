@@ -15,7 +15,7 @@ This application allows you to keep records of personal finances. It's easy, jus
 
 ![]()
 
-Start write a text note of your income or expense in the first input field and then write an amount (just digit) in the second field. Push the 'Plus' button (or **Enter** key on your keyboard)  to add a note to the note list.
+Start write a text note in your income or expense tab in the first input field and then write an amount (just digit) in the second field. Push the 'Plus' button (or **Enter** key on your keyboard)  to add a note to the note list.
 
 ![]()
 
