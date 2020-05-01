@@ -182,6 +182,7 @@ h1 {
 }
 
 ul {
+    height: 40vh;
     padding-top: 10px;
     overflow-y: auto;
 }
