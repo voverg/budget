@@ -129,6 +129,9 @@ ul {
     padding-top: 10px;
     overflow-y: auto;
 }
+.dashboard__all ul {
+    height: 50vh;
+}
 li {
     display: flex;
     justify-content: space-between;
@@ -236,6 +239,9 @@ div.input input::placeholder {
     }
     .income, .outcome{
         width: 40%;
+    }
+    ul {
+        height: 45vh;
     }
     div.input input {
         padding-left: 5px;
