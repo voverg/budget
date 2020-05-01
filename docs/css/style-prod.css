@@ -56,7 +56,7 @@ h1 {
     text-align: center;
 }
 .balance {
-    -ms-flex-preferred-size: 35%;
+    -ms-flex-preferred-size: 33%;
         flex-basis: 35%;
     display: -webkit-box;
     display: -ms-flexbox;

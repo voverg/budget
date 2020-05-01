@@ -41,7 +41,7 @@ h1 {
     text-align: center;
 }
 .balance {
-    flex-basis: 35%;
+    flex-basis: 33%;
     display: flex;
     flex-direction: column;
     align-items: center;
